@@ -5,9 +5,9 @@ public class HungerManager : MonoBehaviour
 {
     public GameObject player;
     private Damageable damageable;
-    private float damageTimer;
     private int timerGoal;
     private int damageValue;
+    public float damageTimer;
     public bool fasterDamage;
     public bool extraDamage;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
