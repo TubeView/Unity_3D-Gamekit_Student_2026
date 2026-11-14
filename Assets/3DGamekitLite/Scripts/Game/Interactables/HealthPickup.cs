@@ -3,6 +3,8 @@ using Gamekit3D;
 
 public class HealthPickup : MonoBehaviour
 {
+    public bool hungerActivate;
+    public bool hungerCancel;
     public bool fullRegen;
     public int healAmount;
     
@@ -27,6 +29,10 @@ public class HealthPickup : MonoBehaviour
     {
         damageable = other.GetComponent<Damageable>();
         hungerManager.damageTimer = 0;
+        if (hungerActivate)
+            hungerManager.hungerActive = true;
+        if (hungerCancel)
+            hungerManager.hungerActive = false;
         if (fullRegen)
         {
             damageable.ResetDamage();

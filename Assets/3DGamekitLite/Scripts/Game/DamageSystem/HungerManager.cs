@@ -8,11 +8,13 @@ public class HungerManager : MonoBehaviour
     private int timerGoal;
     private int damageValue;
     public float damageTimer;
+    public bool hungerActive;
     public bool fasterDamage;
     public bool extraDamage;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        hungerActive = false;
         damageable = player.GetComponent<Damageable>();
         damageTimer = 0;
         timerGoal = 10;
@@ -21,21 +23,24 @@ public class HungerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        damageTimer += Time.deltaTime;
-        Debug.Log("Damage Timer: " + damageTimer);
-        if (fasterDamage)
-            timerGoal = 7;
-        else
-            timerGoal = 10;
-        if (damageTimer >= timerGoal && !extraDamage)
+        if (hungerActive)
         {
-            damageValue = 1;
-            Damage();
-        }
-        else if (damageTimer >= timerGoal && extraDamage)
-        {
-            damageValue = 2;
-            Damage();
+            damageTimer += Time.deltaTime;
+            Debug.Log("Damage Timer: " + damageTimer);
+            if (fasterDamage)
+                timerGoal = 7;
+            else
+                timerGoal = 10;
+            if (damageTimer >= timerGoal && !extraDamage)
+            {
+                damageValue = 1;
+                Damage();
+            }
+            else if (damageTimer >= timerGoal && extraDamage)
+            {
+                damageValue = 2;
+                Damage();
+            }
         }
     }
 
