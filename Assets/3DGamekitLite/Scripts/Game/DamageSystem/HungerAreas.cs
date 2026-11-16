@@ -21,7 +21,7 @@ public class HungerAreas : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.CompareTag("Player"))
         {
             if (fasterHunger)
                 hungerManager.fasterDamage = true;
@@ -29,14 +29,19 @@ public class HungerAreas : MonoBehaviour
             if (strongerHunger)
                 hungerManager.extraDamage = true;
         }
+        else
+        {
+            hungerManager.fasterDamage = false;
+            hungerManager.extraDamage = false;
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (fasterHunger)
-            hungerManager.fasterDamage = false;
-        
-        if (strongerHunger)
+        if (other.CompareTag("Player"))
+        {
+            hungerManager.fasterDamage = false; 
             hungerManager.extraDamage = false;
+        }
     }
 }
