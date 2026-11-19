@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 114396374095734118}
   - component: {fileID: 114203780446379988}
   - component: {fileID: 114041579122358958}
+  - component: {fileID: 6341228159881597395}
   - component: {fileID: 114858556884115054}
   - component: {fileID: 114821708130241382}
   - component: {fileID: -2347840030432873607}
@@ -209,6 +210,20 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   priority: 0
+--- !u!114 &6341228159881597395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1039473416030948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioListener
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 0}
 --- !u!114 &114858556884115054
 MonoBehaviour:
   m_ObjectHideFlags: 0
